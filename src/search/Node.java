@@ -6,50 +6,51 @@ package search;
  *
  */
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 
 public class Node {
-    public char status;
+    // public char status;
     private int x;
     private int y;
-    ArrayList<Node> childNodes;
-    
-    Node leftChild;
-    Node rightChild;
-    
-    public Node(char status, int x, int y, Node leftChild, Node rightChild){
-        this.status = status;
+    public char flag;
+    public char value;
+    LinkedList<Node> childNodes;
+    Node parent;
+
+    // Node constructor
+    public Node(int x, int y, char value) {
         this.x = x;
         this.y = y;
-        this.leftChild = leftChild;
-        this.rightChild = rightChild;
+        this.value = value;
+        if (value == 'O') {
+            this.flag = 1;
+        } else if (value == 'X') {
+            this.flag = 0;
+        }
     }
-    
-    public char getPosition(int x, int y){
-        return status;
+
+    // Get value of node
+    public char getValue() {
+        return value;
     }
-    public int getX(){
+
+    // Get x coordinate of node
+    public int getX() {
         return x;
     }
-    
-    public int getY(){
+
+    // Get y coordinate of node
+    public int getY() {
         return y;
     }
-    
-    public ArrayList<Node> getChildren(){
-        ArrayList<Node> childNodes = new ArrayList<>();
-        if(this.leftChild !=null){
-            childNodes.add(leftChild);
-        }
-        
-        if(this.rightChild != null){
-            childNodes.add(rightChild);
-        }
-        
+
+    // Get child nodes of node
+    public LinkedList<Node> getChildren() {
         return childNodes;
     }
-    
-    public boolean removeChild(Node n){
+
+    // Remove child node
+    public boolean removeChild(Node n) {
         return false;
     }
 }

@@ -26,7 +26,18 @@ public class BFS {
         explored.add(start);
         
         while(!q.isEmpty()){
-            
+            Node current = q.remove();
+            if(current.equals(this.goal)){
+                System.out.println(explored);
+                return true;
+            } else {
+                if(current.getChildren().isEmpty()) {
+                    return false;
+                } else {
+                    q.addAll(current.getChildren());
+                }
+            }
+            explored.add(current);
         }
         
         return false;
