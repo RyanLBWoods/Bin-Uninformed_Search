@@ -50,25 +50,20 @@ public class Node {
     // Get child nodes of node
     public LinkedList<Node> getChildren() {
         LinkedList<Node> childNodes = new LinkedList<>();
-        if(this.uChild != null){
-            childNodes.add(uChild);
+        if(this.dChild != null){
+            childNodes.add(dChild);
         }
         if(this.rChild != null){
             childNodes.add(rChild);
         }
-        if(this.dChild != null){
-            childNodes.add(dChild);
+        if(this.uChild != null){
+            childNodes.add(uChild);
         }
         if(this.lChild != null){
             childNodes.add(lChild);
         }
         return childNodes;
     }
-
-//    // Add child nodes
-//    public void addChild(Node n) {
-//        this.childNodes.add(n);
-//    }
 
     // Remove child node
     public boolean removeChild(Node n) {
