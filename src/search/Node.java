@@ -6,7 +6,9 @@ package search;
  *
  */
 
+import java.util.Arrays;
 import java.util.LinkedList;
+import java.util.Queue;
 
 public class Node {
     // public char status;
@@ -47,6 +49,11 @@ public class Node {
         return y;
     }
 
+    // Get location of node
+    public int[] getLocation(){
+        int[] location = {x, y};
+        return location;
+    }
     // Get child nodes of node
     public LinkedList<Node> getChildren() {
         LinkedList<Node> childNodes = new LinkedList<>();
@@ -65,8 +72,14 @@ public class Node {
         return childNodes;
     }
 
-    // Remove child node
-    public boolean removeChild(Node n) {
-        return false;
+    public boolean checkNode(Queue<Node> q, Node node){
+        Queue<Node> temp = q;
+        for(int i = 0; i < q.size();i++){
+            Node check = temp.remove();
+            if(Arrays.equals(check.getLocation(), node.getLocation())){
+                return false;
+            }
+        }
+        return true;
     }
 }
