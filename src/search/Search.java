@@ -54,6 +54,10 @@ public class Search {
         BFS.BFSearch(map1, start, bob);
         // Find Goal
         BFS.BFSearch(map1, bob, goal);
+        //
+        DFS.DFSearch(map1, start, bob);
+        //
+        DFS.DFSearch(map1, bob, goal);
     }
 
 }
