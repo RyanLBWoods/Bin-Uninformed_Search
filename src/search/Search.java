@@ -35,7 +35,7 @@ public class Search {
 			// Search
 			switch(search_algorithm){
 				default:
-					System.out.println("Usage: java -jar Search1.jar map_number(1 - 10) search_Algorithm(BFS or DFS)");
+					System.out.println("Usage: java -jar Search1.jar map_number(1 - 6) search_Algorithm(BFS or DFS)");
 					break;
 				case "BFS":
 					// Find Bob
