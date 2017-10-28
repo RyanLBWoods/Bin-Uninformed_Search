@@ -39,17 +39,19 @@ public class DFS extends SearchMethod{
                     }
                 }
                 // Print the path of coordinates
+                System.out.println("Find path from " + start.getValue() + " to " + goal.getValue());
                 for (int i = Path.size() - 1; i >= 0; i--) {
                     System.out.print(Arrays.toString(Path.get(i)));
                 }
-                System.out.println();
+                System.out.println("\nPath length: " + Path.size());
                 explored.remove(0); // Get rid of first node as it is a
                                     // redundancy
+                // Show explored times
+                System.out.println("Explored " + explored.size() + " position");
                 for (int j = 0; j < explored.size(); j++) {
                     System.out.print(Arrays.toString(explored.get(j).getLocation()));
                 }
-                // Show explored times
-                System.out.println("\nExplored " + explored.size() + " position");
+                System.out.println("\n");
                 break;
             } else {
                 /*
@@ -98,11 +100,10 @@ public class DFS extends SearchMethod{
                     }
                 }
 
-                if (current.getChildren().isEmpty()) {
-                    System.out.println("Branch ended");
-                } else {
+                if (!current.getChildren().isEmpty()) {
                     s.addAll(current.getChildren());
                     childs.addAll(current.getChildren());
+//                    System.out.println("Branch ended");
                 }
                 explored.add(current);
             }
