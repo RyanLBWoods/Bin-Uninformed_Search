@@ -59,11 +59,6 @@ public class BreathFirstSearch extends SearchMethod {
 				System.out.println("\n");
 				break;
 			} else {
-				// Get child nodes
-				// 1. give the potential child nodes
-				// 2. check if the potential child node is the parent node or
-				// has been explored
-				// 3. if so, get rid of that child node
 				findChild(current, map, childs, explored);
 				// Insert nodes to frontier
 				if (!current.getChildren().isEmpty()) {
