@@ -39,15 +39,15 @@ public class Search {
 					break;
 				case "BFS":
 					// Find Bob
-					BFS.BFSearch(map, start, bob);
+					BreathFirstSearch.BFSearch(map, start, bob);
 					// Find Goal
-					BFS.BFSearch(map, bob, goal);
+					BreathFirstSearch.BFSearch(map, bob, goal);
 					break;
 				case "DFS":
 					// Find Bob
-					DFS.DFSearch(map, start, bob);
+					DepthFirstSearch.DFSearch(map, start, bob);
 					// Find Goal
-					DFS.DFSearch(map, bob, goal);
+					DepthFirstSearch.DFSearch(map, bob, goal);
 					break;
 			}
 		} catch (Exception e) {
