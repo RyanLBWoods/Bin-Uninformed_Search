@@ -5,6 +5,11 @@ import java.util.Arrays;
 
 public abstract class SearchMethod {
 	/**
+	 * A boolean type variable to check if the search succeed.
+	 */
+	public static boolean find = false;
+
+	/**
 	 * Check if node has been explored.
 	 * 
 	 * @param check

@@ -1,7 +1,6 @@
 package search;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Stack;
 
 public class DepthFirstSearch extends SearchMethod {
@@ -29,6 +28,7 @@ public class DepthFirstSearch extends SearchMethod {
 		while (!s.isEmpty()) {
 			Node current = s.pop();
 			if (current.getValue() == goal.getValue()) {
+				find = true;
 				printOutput(current, start, goal, explored);
 				break;
 			} else {

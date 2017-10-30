@@ -40,14 +40,32 @@ public class Search {
 				case "BFS":
 					// Find Bob
 					BreathFirstSearch.BFSearch(map, start, bob);
+					if(SearchMethod.find == false){
+						System.out.println("Can not find path to Bob");
+						System.exit(0);
+					}
 					// Find Goal
+					SearchMethod.find = false;
 					BreathFirstSearch.BFSearch(map, bob, goal);
+					if(SearchMethod.find == false){
+						System.out.println("Can not find path to Goal");
+						System.exit(0);
+					}
 					break;
 				case "DFS":
 					// Find Bob
 					DepthFirstSearch.DFSearch(map, start, bob);
+					if(SearchMethod.find == false){
+						System.out.println("Can not find path to Bob");
+						System.exit(0);
+					}
 					// Find Goal
+					SearchMethod.find = false;
 					DepthFirstSearch.DFSearch(map, bob, goal);
+					if(SearchMethod.find == false){
+						System.out.println("Can not find path to Goal");
+						System.exit(0);
+					}
 					break;
 			}
 		} catch (Exception e) {
