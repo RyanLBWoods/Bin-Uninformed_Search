@@ -24,6 +24,7 @@ public class DepthFirstSearch extends SearchMethod {
 		// Initialise process
 		start.parent = start;
 		s.push(start);
+		// Add start to explored list to avoid null pointer exception
 		explored.add(start);
 		// Search
 		while (!s.isEmpty()) {

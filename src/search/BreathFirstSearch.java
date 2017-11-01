@@ -27,6 +27,7 @@ public class BreathFirstSearch extends SearchMethod {
 		// Initialise process
 		start.parent = start;
 		q.add(start);
+		// Add start to explored list to avoid null pointer exception
 		explored.add(start);
 		// Search
 		while (!q.isEmpty()) {

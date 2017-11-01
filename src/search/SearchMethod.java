@@ -144,42 +144,49 @@ public abstract class SearchMethod {
 		}
 		System.out.println("\n");
 	}
+
 	/**
 	 * Method to print the frontier for breath-first search.
 	 * 
-	 * @param frontier A queue of frontier to print
+	 * @param frontier
+	 *            A queue of frontier to print
 	 */
-	public static void showBFSFrontier(Queue<Node> frontier){
+	public static void showBFSFrontier(Queue<Node> frontier) {
 		StringBuffer str = new StringBuffer();
 		str.append("Frontier: {");
-		for(Node n: frontier){
+		for (Node n : frontier) {
 			str.append(Arrays.toString(n.getLocation()) + ", ");
 		}
 		str.replace(str.length() - 2, str.length(), "}");
 		System.out.println(str);
 	}
+
 	/**
 	 * Method to print the frontier for depth-first search.
 	 * 
-	 * @param frontier A queue of frontier to print
+	 * @param frontier
+	 *            A queue of frontier to print
 	 */
-	public static void showDFSFrontier(Stack<Node> frontier){
+	public static void showDFSFrontier(Stack<Node> frontier) {
 		StringBuffer str = new StringBuffer();
 		str.append("Frontier: {");
-		for(Node n: frontier){
+		for (Node n : frontier) {
 			str.append(Arrays.toString(n.getLocation()) + ", ");
 		}
 		str.replace(str.length() - 2, str.length(), "}");
 		System.out.println(str);
 	}
+
 	/**
 	 * Method to show explored node.
+	 * 
 	 * @param explored
+	 *            The array list of explored to print
 	 */
-	public static void showExplored(ArrayList<Node> explored){
+	public static void showExplored(ArrayList<Node> explored) {
 		StringBuffer str = new StringBuffer();
 		str.append("Explored: {");
-		for(int i = 1; i < explored.size(); i++){
+		for (int i = 1; i < explored.size(); i++) {
 			str.append(Arrays.toString(explored.get(i).getLocation()) + ", ");
 		}
 		str.replace(str.length() - 2, str.length(), "}");
