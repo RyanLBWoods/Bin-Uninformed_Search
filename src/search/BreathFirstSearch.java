@@ -1,6 +1,7 @@
 package search;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -30,6 +31,7 @@ public class BreathFirstSearch extends SearchMethod {
 		// Search
 		while (!q.isEmpty()) {
 			Node current = q.remove();
+			System.out.println("Current node: " + Arrays.toString(current.getLocation()));
 			if (current.getValue() == goal.getValue()) {
 				find = true;
 				printOutput(current, start, goal, explored);
@@ -41,6 +43,7 @@ public class BreathFirstSearch extends SearchMethod {
 					q.addAll(current.getChildren());
 					childs.addAll(current.getChildren());
 				}
+				showBFSFrontier(q);
 				explored.add(current);
 			}
 		}

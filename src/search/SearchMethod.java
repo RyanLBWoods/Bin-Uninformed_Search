@@ -2,6 +2,8 @@ package search;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Queue;
+import java.util.Stack;
 
 public abstract class SearchMethod {
 	/**
@@ -141,5 +143,33 @@ public abstract class SearchMethod {
 			System.out.print(Arrays.toString(explored.get(j).getLocation()));
 		}
 		System.out.println("\n");
+	}
+	/**
+	 * Method to print the frontier for breath-first search.
+	 * 
+	 * @param frontier A queue of frontier to print
+	 */
+	public static void showBFSFrontier(Queue<Node> frontier){
+		StringBuffer str = new StringBuffer();
+		str.append("Frontier: {");
+		for(Node n: frontier){
+			str.append(Arrays.toString(n.getLocation()) + ", ");
+		}
+		str.replace(str.length() - 2, str.length(), "}");
+		System.out.println(str);
+	}
+	/**
+	 * Method to print the frontier for depth-first search.
+	 * 
+	 * @param frontier A queue of frontier to print
+	 */
+	public static void showDFSFrontier(Stack<Node> frontier){
+		StringBuffer str = new StringBuffer();
+		str.append("Frontier: {");
+		for(Node n: frontier){
+			str.append(Arrays.toString(n.getLocation()) + ", ");
+		}
+		str.replace(str.length() - 2, str.length(), "}");
+		System.out.println(str);
 	}
 }

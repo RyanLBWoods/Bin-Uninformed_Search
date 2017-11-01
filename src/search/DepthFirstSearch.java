@@ -38,6 +38,7 @@ public class DepthFirstSearch extends SearchMethod {
 					s.addAll(current.getChildren());
 					childs.addAll(current.getChildren());
 				}
+				showDFSFrontier(s);
 				explored.add(current);
 			}
 		}
