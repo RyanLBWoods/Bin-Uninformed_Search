@@ -18,7 +18,7 @@ public class BreathFirstSearch extends SearchMethod {
 	 */
 	public static void BFSearch(char[][] map, Node start, Node goal) {
 
-		Queue<Node> q = new LinkedList<>(); // frontier
+		Queue<Node> frontier = new LinkedList<>(); // frontier
 		// Record nodes that already become child
 		ArrayList<Node> childs = new ArrayList<>();
 		// Record nodes that have been explored
@@ -26,12 +26,12 @@ public class BreathFirstSearch extends SearchMethod {
 
 		// Initialise process
 		start.parent = start;
-		q.add(start);
+		frontier.add(start);
 		// Add start to explored list to avoid null pointer exception
 		explored.add(start);
 		// Search
-		while (!q.isEmpty()) {
-			Node current = q.remove();
+		while (!frontier.isEmpty()) {
+			Node current = frontier.remove();
 			System.out.println("Current node: " + Arrays.toString(current.getLocation()));
 			if (current.getValue() == goal.getValue()) {
 				find = true;
@@ -41,10 +41,10 @@ public class BreathFirstSearch extends SearchMethod {
 				findChild(current, map, childs, explored);
 				// Insert nodes to frontier
 				if (!current.getChildren().isEmpty()) {
-					q.addAll(current.getChildren());
+					frontier.addAll(current.getChildren());
 					childs.addAll(current.getChildren());
 				}
-				showBFSFrontier(q);
+				showBFSFrontier(frontier);
 				explored.add(current);
 				showExplored(explored);
 				System.out.println();

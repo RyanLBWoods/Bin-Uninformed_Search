@@ -16,19 +16,19 @@ public class DepthFirstSearch extends SearchMethod {
 	 *            The aim node
 	 */
 	public static void DFSearch(char[][] map, Node start, Node goal) {
-		Stack<Node> s = new Stack<>(); // frontier
+		Stack<Node> frontier = new Stack<>(); // frontier
 		// Record nodes that already become child
 		ArrayList<Node> childs = new ArrayList<>();
 		// Record nodes that have been explored
 		ArrayList<Node> explored = new ArrayList<>();
 		// Initialise process
 		start.parent = start;
-		s.push(start);
+		frontier.push(start);
 		// Add start to explored list to avoid null pointer exception
 		explored.add(start);
 		// Search
-		while (!s.isEmpty()) {
-			Node current = s.pop();
+		while (!frontier.isEmpty()) {
+			Node current = frontier.pop();
 			System.out.println("Current node: " + Arrays.toString(current.getLocation()));
 			if (current.getValue() == goal.getValue()) {
 				find = true;
@@ -38,10 +38,10 @@ public class DepthFirstSearch extends SearchMethod {
 				findChild(current, map, childs, explored);
 				// Insert nodes to frontier
 				if (!current.getChildren().isEmpty()) {
-					s.addAll(current.getChildren());
+					frontier.addAll(current.getChildren());
 					childs.addAll(current.getChildren());
 				}
-				showDFSFrontier(s);
+				showDFSFrontier(frontier);
 				explored.add(current);
 				showExplored(explored);
 				System.out.println();

@@ -9,7 +9,6 @@ package search;
 import java.util.LinkedList;
 
 public class Node {
-    // public char status;
     private int x;
     private int y;
     public char value;
