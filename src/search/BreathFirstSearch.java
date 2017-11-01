@@ -45,6 +45,8 @@ public class BreathFirstSearch extends SearchMethod {
 				}
 				showBFSFrontier(q);
 				explored.add(current);
+				showExplored(explored);
+				System.out.println();
 			}
 		}
 	}

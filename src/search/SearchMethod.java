@@ -172,4 +172,17 @@ public abstract class SearchMethod {
 		str.replace(str.length() - 2, str.length(), "}");
 		System.out.println(str);
 	}
+	/**
+	 * Method to show explored node.
+	 * @param explored
+	 */
+	public static void showExplored(ArrayList<Node> explored){
+		StringBuffer str = new StringBuffer();
+		str.append("Explored: {");
+		for(int i = 1; i < explored.size(); i++){
+			str.append(Arrays.toString(explored.get(i).getLocation()) + ", ");
+		}
+		str.replace(str.length() - 2, str.length(), "}");
+		System.out.println(str);
+	}
 }

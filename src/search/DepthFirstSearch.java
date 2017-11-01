@@ -1,6 +1,7 @@
 package search;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Stack;
 
 public class DepthFirstSearch extends SearchMethod {
@@ -27,6 +28,7 @@ public class DepthFirstSearch extends SearchMethod {
 		// Search
 		while (!s.isEmpty()) {
 			Node current = s.pop();
+			System.out.println("Current node: " + Arrays.toString(current.getLocation()));
 			if (current.getValue() == goal.getValue()) {
 				find = true;
 				printOutput(current, start, goal, explored);
@@ -40,6 +42,8 @@ public class DepthFirstSearch extends SearchMethod {
 				}
 				showDFSFrontier(s);
 				explored.add(current);
+				showExplored(explored);
+				System.out.println();
 			}
 		}
 	}
