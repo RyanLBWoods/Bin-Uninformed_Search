@@ -33,6 +33,7 @@ public class Search {
 				}
 			}
 			// Search
+			long time = System.currentTimeMillis();
 			switch(search_algorithm){
 				default:
 					System.out.println("Usage: java -jar Search1.jar map_number(1 - 6) search_Algorithm(BFS or DFS)");
@@ -42,6 +43,8 @@ public class Search {
 					BreathFirstSearch.BFSearch(map, start, bob);
 					if(SearchMethod.find == false){
 						System.out.println("Can not find path to Bob");
+						time = System.currentTimeMillis() - time;
+						System.out.println(time);
 						System.exit(0);
 					}
 					// Find Goal
@@ -49,6 +52,8 @@ public class Search {
 					BreathFirstSearch.BFSearch(map, bob, goal);
 					if(SearchMethod.find == false){
 						System.out.println("Can not find path to Goal");
+						time = System.currentTimeMillis() - time;
+						System.out.println(time);
 						System.exit(0);
 					}
 					break;
@@ -57,6 +62,8 @@ public class Search {
 					DepthFirstSearch.DFSearch(map, start, bob);
 					if(SearchMethod.find == false){
 						System.out.println("Can not find path to Bob");
+						time = System.currentTimeMillis() - time;
+						System.out.println(time);
 						System.exit(0);
 					}
 					// Find Goal
@@ -64,10 +71,14 @@ public class Search {
 					DepthFirstSearch.DFSearch(map, bob, goal);
 					if(SearchMethod.find == false){
 						System.out.println("Can not find path to Goal");
+						time = System.currentTimeMillis() - time;
+						System.out.println(time);
 						System.exit(0);
 					}
 					break;
 			}
+			time = System.currentTimeMillis() - time;
+			System.out.println(time);
 		} catch (Exception e) {
 			System.out.println("Usage: java -jar Search1.jar map_number(1 - 6) search_Algorithm(BFS or DFS)");
 		}

@@ -24,6 +24,8 @@ public class BreathFirstSearch extends SearchMethod {
 		// Record nodes that have been explored
 		ArrayList<Node> explored = new ArrayList<>();
 
+		int max = 0;
+		
 		// Initialise process
 		start.parent = start;
 		frontier.add(start);
@@ -36,6 +38,7 @@ public class BreathFirstSearch extends SearchMethod {
 			if (current.getValue() == goal.getValue()) {
 				find = true;
 				printOutput(current, start, goal, explored);
+				System.out.println(max);
 				break;
 			} else {
 				findChild(current, map, childs, explored);
@@ -48,6 +51,9 @@ public class BreathFirstSearch extends SearchMethod {
 				explored.add(current);
 				showExplored(explored);
 				System.out.println();
+			}
+			if(frontier.size() > max){
+				max = frontier.size();
 			}
 		}
 	}

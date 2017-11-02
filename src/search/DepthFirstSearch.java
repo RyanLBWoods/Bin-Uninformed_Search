@@ -26,6 +26,9 @@ public class DepthFirstSearch extends SearchMethod {
 		frontier.push(start);
 		// Add start to explored list to avoid null pointer exception
 		explored.add(start);
+		
+		int max = 0;
+		
 		// Search
 		while (!frontier.isEmpty()) {
 			Node current = frontier.pop();
@@ -33,6 +36,7 @@ public class DepthFirstSearch extends SearchMethod {
 			if (current.getValue() == goal.getValue()) {
 				find = true;
 				printOutput(current, start, goal, explored);
+				System.out.println(max);
 				break;
 			} else {
 				findChild(current, map, childs, explored);
@@ -45,6 +49,9 @@ public class DepthFirstSearch extends SearchMethod {
 				explored.add(current);
 				showExplored(explored);
 				System.out.println();
+			}
+			if(frontier.size() > max){
+				max = frontier.size();
 			}
 		}
 	}
